@@ -19,4 +19,8 @@ export class AuthorService {
     return this.http.get<Author[]>(this.baseUrl, this.httpOptions);
   }
 
+  getAuthor(id: string): Observable<Author> {
+    return this.http.get<Author>(`${this.baseUrl}/${id}`, this.httpOptions);
+  }
+
 }
