@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <div class="nav navbar-nav">
+        <a 
+        class="nav-item nav-link active" 
+        [routerLink]="['./authors']" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">Authors</a>
+        <a 
+        class="nav-item nav-link" 
+        [routerLink]="['./books']" 
+        routerLinkActive="active">Books</a>
+    </div>
+</nav>
+<router-outlet></router-outlet>
