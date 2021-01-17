@@ -4,12 +4,12 @@ import { Author } from '../author';
 import { AuthorService } from '../author.service';
 
 @Component({
-  selector: 'app-author',
-  templateUrl: './author.component.html',
-  styleUrls: ['./author.component.css']
+  selector: 'app-author-detail',
+  templateUrl: './author-detail.component.html',
+  styleUrls: ['./author-detail.component.css']
 })
-export class AuthorComponent implements OnInit {
-  author!: Author;
+export class AuthorDetailComponent implements OnInit {
+  author= new Author();
 
   constructor(
     private readonly authorService: AuthorService,
@@ -19,8 +19,9 @@ export class AuthorComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const id: string = params['id'];
-      this.authorService.getAuthor(id).subscribe(author => this.author = author);
-    })
+      this.authorService.getAuthor(id)
+        .subscribe(author => this.author = author)
+    });
   }
 
 }
