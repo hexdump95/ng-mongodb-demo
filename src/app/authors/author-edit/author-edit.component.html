@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div class="form-group">
+        First Name: <input type="text" name="firstName" [(ngModel)]='author.firstName'>
+    </div>
+    <div class="form-group">
+        Last Name: <input type="text" name="lastName" [(ngModel)]='author.lastName'>
+    </div>
+    <button type="submit" class="btn btn-primary mr-2">{{ author.id ? 'Update' : 'Create' }}</button>
+    <button type="button" class="btn btn-danger" routerLink="/dashboard/authors">Cancel</button>
+</form>
